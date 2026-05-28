@@ -1,0 +1,51 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vps
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p 22022 -H 143.95.209.140 >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy
+        run: |
+          ssh -i ~/.ssh/deploy_key -p 22022 root@143.95.209.140 'bash -s' <<'REMOTE'
+          set -e
+          cd /var/www/lp2-autoprimetech
+          echo "→ git pull"
+          git fetch origin main
+          git reset --hard origin/main
+          echo "→ npm install --legacy-peer-deps"
+          npm install --legacy-peer-deps --no-audit --no-fund 2>&1 | tail -5
+          echo "→ next build"
+          npm run build 2>&1 | tail -10
+          echo "→ pm2 reload"
+          pm2 reload lp2-autoprimetech --update-env
+          pm2 save --force
+          echo "✓ Deploy concluído em $(date -Iseconds)"
+          REMOTE
+
+      - name: Smoke test
+        run: |
+          sleep 3
+          curl -s -o /dev/null -w "Status: %{http_code}\nTotal: %{time_total}s\n" \
+            -H "Host: lp2.autoprimetech.com.br" \
+            http://143.95.209.140/ || true
