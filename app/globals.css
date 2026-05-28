@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-brand-black text-ink antialiased;
+    background-image: radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(0, 102, 255, 0.15),
+        transparent 50%
+      ),
+      linear-gradient(180deg, #05080f 0%, #0a1628 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-brand-red text-white;
+  }
+}
+
+@layer components {
+  .container-lp {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .glass-strong {
+    @apply rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-2xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-cta text-white shadow-glow-red hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-[0_8px_30px_-8px_rgba(37,211,102,0.6)] hover:bg-[#1FBA57] hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply btn border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white/10;
+  }
+
+  .heading-display {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-blue-light via-brand-accent to-brand-red bg-clip-text text-transparent;
+  }
+
+  .section {
+    @apply relative overflow-hidden py-20 sm:py-28;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-ink-soft backdrop-blur-md;
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent);
+  }
+
+  .scroll-mt-header {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
