@@ -42,7 +42,7 @@ export function CTAFinal() {
               href={whatsappLink('Quero proteger meu veículo agora. Pode me passar um orçamento?')}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick('cta-final')}
+              onClick={(e) => trackWhatsAppClick('cta-final', e)}
               className="w-full sm:w-auto"
             >
               <MessageCircle className="h-5 w-5" />

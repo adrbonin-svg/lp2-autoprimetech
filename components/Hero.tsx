@@ -49,7 +49,7 @@ export function Hero() {
                 href={whatsappLink('Olá! Vim pelo site e quero proteger meu veículo agora.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick('hero-primary')}
+                onClick={(e) => trackWhatsAppClick('hero-primary', e)}
               >
                 Quero proteger meu veículo
               </ButtonLink>

@@ -75,7 +75,7 @@ export function ComoFunciona() {
             href={whatsappLink('Quero começar! Me explica como funciona.')}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick('como-funciona')}
+            onClick={(e) => trackWhatsAppClick('como-funciona', e)}
           >
             Começar agora pelo WhatsApp
           </ButtonLink>

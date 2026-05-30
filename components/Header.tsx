@@ -69,7 +69,7 @@ export function Header() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick('header')}
+            onClick={(e) => trackWhatsAppClick('header', e)}
           >
             WhatsApp
           </ButtonLink>
@@ -105,7 +105,7 @@ export function Header() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick('header-mobile')}
+              onClick={(e) => trackWhatsAppClick('header-mobile', e)}
             >
               Falar no WhatsApp
             </ButtonLink>
