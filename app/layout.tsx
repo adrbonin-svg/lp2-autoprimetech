@@ -86,6 +86,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_ID}");`}
           </Script>
         )}
+
+        {/* AutoPrime Click Shield — fraud detection via BotD + Z-score */}
+        <Script
+          id="autoprime-click-shield"
+          src="https://adm.autoprimetech.com.br/js/cs.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="min-h-screen bg-brand-black font-sans text-ink">
         {GTM_ID && (
