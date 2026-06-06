@@ -79,9 +79,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-xs text-ink-muted sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} AutoPrime Tech. Todos os direitos reservados.</p>
           <div className="flex gap-5">
-            <a href="/politica-de-privacidade" className="hover:text-white">Privacidade</a>
-            <a href="/termos-de-uso" className="hover:text-white">Termos</a>
-            <a href="/lgpd" className="hover:text-white">LGPD</a>
+            <a href="/politica-privacidade" className="hover:text-white">Privacidade</a>
+            <a href="/meus-dados" className="hover:text-white">Meus Dados (LGPD)</a>
           </div>
         </div>
       </div>
