@@ -1,9 +1,10 @@
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { TrustBar } from '@/components/TrustBar';
 import { Beneficios } from '@/components/Beneficios';
-import { ProvaSocial } from '@/components/ProvaSocial';
-import { Diferenciais } from '@/components/Diferenciais';
+import { Assistencias } from '@/components/Assistencias';
 import { ComoFunciona } from '@/components/ComoFunciona';
+import { ProvaSocial } from '@/components/ProvaSocial';
 import { Planos } from '@/components/Planos';
 import { FAQ } from '@/components/FAQ';
 import { CTAFinal } from '@/components/CTAFinal';
@@ -16,10 +17,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <TrustBar />
         <Beneficios />
-        <ProvaSocial />
-        <Diferenciais />
+        <Assistencias />
         <ComoFunciona />
+        <ProvaSocial />
         <Planos />
         <FAQ />
         <CTAFinal />

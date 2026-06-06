@@ -5,59 +5,8 @@ import { Check, Crown } from 'lucide-react';
 import { ButtonLink } from './ui/Button';
 import { SectionTitle } from './ui/SectionTitle';
 import { whatsappLink, cn } from '@/lib/utils';
-import { trackEvent } from '@/lib/tracking';
-
-const PLANS = [
-  {
-    name: 'Essencial',
-    tagline: 'Para quem quer começar com segurança',
-    price: '44,90',
-    cents: '/mês',
-    features: [
-      'Rastreamento 24h em tempo real',
-      'App iOS + Android',
-      'Histórico de 30 dias',
-      'Alerta de ignição e bateria',
-      'Central 24h via WhatsApp',
-    ],
-    cta: 'Contratar Essencial',
-    highlight: false,
-  },
-  {
-    name: 'Premium',
-    tagline: 'Proteção completa e mais escolhido',
-    price: '69,90',
-    cents: '/mês',
-    features: [
-      'Tudo do Essencial',
-      'Bloqueio remoto pelo app',
-      'Cerca eletrônica ilimitada',
-      'Histórico de 90 dias',
-      'Alerta de excesso de velocidade',
-      'Recuperação assistida pela central',
-      'Suporte prioritário',
-    ],
-    cta: 'Contratar Premium',
-    highlight: true,
-  },
-  {
-    name: 'Frota',
-    tagline: 'Para empresas e gestores',
-    price: '199,90',
-    cents: '/veículo/mês',
-    features: [
-      'Tudo do Premium',
-      'Painel multi-veículo',
-      'Relatórios gerenciais',
-      'Telemetria de motor',
-      'API e integrações',
-      'Gerente de conta dedicado',
-      'SLA garantido em contrato',
-    ],
-    cta: 'Falar com consultor',
-    highlight: false,
-  },
-];
+import { trackWhatsAppClick } from '@/lib/tracking';
+import { PLANOS } from '@/lib/site';
 
 export function Planos() {
   return (
@@ -66,12 +15,12 @@ export function Planos() {
       <div className="container-lp">
         <SectionTitle
           eyebrow="Planos"
-          title="Escolha o plano ideal |sem fidelidade abusiva|"
-          description="Sem multa para cancelar. Sem letras miúdas. Sem reajuste surpresa. Tudo escrito em contrato."
+          title="Proteção a partir de |R$ 1,67 por dia|"
+          description="Sem multa pra cancelar, sem letras miúdas, sem reajuste surpresa. Tudo escrito em contrato."
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {PLANS.map((plan, i) => (
+          {PLANOS.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 20 }}
@@ -103,12 +52,18 @@ export function Planos() {
                 <span className="font-display text-5xl font-bold text-white">
                   {plan.price}
                 </span>
-                <span className="text-sm text-ink-muted">{plan.cents}</span>
+                <span className="text-sm text-ink-muted">{plan.unit}</span>
               </div>
+              <p className="mt-1 text-xs font-medium text-brand-accent">
+                {plan.perDay}
+              </p>
 
               <ul className="mt-6 flex-1 space-y-3">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-ink">
+                  <li
+                    key={f}
+                    className="flex items-start gap-3 text-sm text-ink"
+                  >
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-green-400" />
                     {f}
                   </li>
@@ -121,12 +76,7 @@ export function Planos() {
                 href={whatsappLink(`Olá! Quero contratar o plano ${plan.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent('cta_click', {
-                    source: `plano-${plan.name.toLowerCase()}`,
-                    value: plan.price,
-                  })
-                }
+                onClick={(e) => trackWhatsAppClick(`plano-${plan.name.toLowerCase()}`, e)}
                 className="mt-8 w-full"
               >
                 {plan.cta}
@@ -136,7 +86,8 @@ export function Planos() {
         </div>
 
         <p className="mt-8 text-center text-sm text-ink-muted">
-          Instalação a partir de R$ 0 · Sem fidelidade · Cancelamento em 1 clique
+          Instalação grátis em promoção · Sem fidelidade · Cancelamento livre ·
+          Homologado Anatel
         </p>
       </div>
     </section>

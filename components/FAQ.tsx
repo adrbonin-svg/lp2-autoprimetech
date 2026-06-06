@@ -11,7 +11,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Quanto custa um rastreador veicular da AutoPrime Tech?',
     answer:
-      'Nossos planos começam em R$ 44,90 por mês no plano Essencial. O plano Premium, mais escolhido, custa R$ 69,90/mês e inclui bloqueio remoto, cerca eletrônica e recuperação assistida. Para frotas, o plano dedicado é R$ 199,90 por veículo. Não há fidelidade obrigatória nem reajuste surpresa.',
+      'Nossos planos começam em R$ 49,90 por mês (cerca de R$ 1,67 por dia) no plano Essencial. O plano Premium, mais escolhido, custa R$ 83,90/mês e inclui bloqueio remoto, cerca virtual, recuperação assistida e assistência 24h. Para frotas, o plano dedicado é R$ 199,90 por veículo. Não há fidelidade obrigatória nem reajuste surpresa.',
   },
   {
     question: 'O rastreador funciona em qualquer carro ou moto?',
