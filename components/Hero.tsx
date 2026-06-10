@@ -50,7 +50,7 @@ export function Hero() {
                 <BadgeCheck className="h-4 w-4 text-green-400" /> Planos flexíveis
               </li>
               <li className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-green-400" /> Instalação grátis
+                <BadgeCheck className="h-4 w-4 text-green-400" /> Instalação rápida
               </li>
               <li className="flex items-center gap-2">
                 <BadgeCheck className="h-4 w-4 text-green-400" /> Homologado Anatel
