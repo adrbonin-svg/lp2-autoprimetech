@@ -40,7 +40,7 @@ export function CTAFinal() {
 
             <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-ink-soft lg:justify-start">
               {[
-                { icon: Shield, text: 'Sem fidelidade' },
+                { icon: Shield, text: 'Planos flexíveis' },
                 { icon: CheckCircle2, text: 'Instalação grátis' },
                 { icon: Clock, text: 'Pronto em 30 min' },
                 { icon: CheckCircle2, text: 'Cancelamento livre' },

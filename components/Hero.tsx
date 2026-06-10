@@ -47,7 +47,7 @@ export function Hero() {
             {/* Selos rápidos */}
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-ink-soft lg:justify-start">
               <li className="flex items-center gap-2">
-                <BadgeCheck className="h-4 w-4 text-green-400" /> Sem fidelidade
+                <BadgeCheck className="h-4 w-4 text-green-400" /> Planos flexíveis
               </li>
               <li className="flex items-center gap-2">
                 <BadgeCheck className="h-4 w-4 text-green-400" /> Instalação grátis

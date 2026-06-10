@@ -86,7 +86,7 @@ export function Planos() {
         </div>
 
         <p className="mt-8 text-center text-sm text-ink-muted">
-          Instalação grátis em promoção · Sem fidelidade · Cancelamento livre ·
+          Instalação grátis em promoção · Planos flexíveis ·
           Homologado Anatel
         </p>
       </div>

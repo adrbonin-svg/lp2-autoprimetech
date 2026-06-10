@@ -162,7 +162,7 @@ export const DEPOIMENTOS = [
   {
     name: "Roberto S.",
     role: "Aracaju/SE",
-    text: "Instalação rápida e sem fidelidade abusiva. Já indiquei pra família toda. Suporte responde na hora pelo WhatsApp.",
+    text: "Instalação rápida e atendimento nota 10. Já indiquei pra família toda. Suporte responde na hora pelo WhatsApp.",
     stars: 5,
   },
 ] as const;

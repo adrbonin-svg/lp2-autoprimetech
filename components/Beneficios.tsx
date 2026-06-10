@@ -78,7 +78,7 @@ export function Beneficios() {
         <SectionTitle
           eyebrow="Por que AutoPrime Tech"
           title="Tudo que você precisa para |proteger seu veículo|"
-          description="Tecnologia premium, central 24h e app simples. Sem letras miúdas, sem fidelidade abusiva."
+          description="Tecnologia premium, central 24h e app simples. Sem letras miúdas, sem cobrança escondida."
         />
 
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

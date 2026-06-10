@@ -5,7 +5,7 @@ const ITEMS = [
   { icon: ShieldCheck, label: 'No mercado desde 2017' },
   { icon: MapPin, label: 'Cobertura nacional' },
   { icon: Headset, label: 'Central humana 24h' },
-  { icon: BadgeCheck, label: 'Sem fidelidade' },
+  { icon: BadgeCheck, label: 'Planos flexíveis' },
 ];
 
 export function TrustBar() {
